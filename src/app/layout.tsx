@@ -1,12 +1,7 @@
-"use client";
-
-import { useState } from "react";
 import { Inter } from "next/font/google";
 
-import Header from "../components/Header";
-import MainIntro from "../components/MainIntro";
-import { LinkContext } from "../components/Contexts";
 import "./globals.css";
+import Layout from "../components/Layout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,16 +15,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [activeLink, setActiveLink] = useState<string>("The blog");
   return (
     <html lang="en">
       <body className={inter.className}>
-        <LinkContext.Provider value={{ activeLink, setActiveLink }}>
-          <>
-            <Header />
-            <MainIntro title={activeLink} />
-          </>
-        </LinkContext.Provider>
+        <Layout />
         {children}
       </body>
     </html>
