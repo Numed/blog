@@ -30,6 +30,10 @@ const Header: FC = () => {
   useEffect(() => {
     const activePage = navLinks.filter((el) => el.href === pathname)[0];
     setActiveLink(activePage.banner);
+    const activeLink = links.current.filter(
+      (el) => el.textContent === activePage.title
+    )[0];
+    activeLink.classList.add("underline", "underline-offset-6");
   }, []);
 
   return (

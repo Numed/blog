@@ -7,14 +7,18 @@
   --foreground-color: #1a1a1a;
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
     --background-rgb: 9, 13, 31, 1;
     --foreground-color: #fff;
   }
-} */
+}
 
 body {
   color: var(--foreground-color);
   background: rgb(var(--background-rgb));
+}
+
+.cards{
+  @apply mt-8 w-full grid grid-cols-1 md:grid-cols-2 gap-4
 }

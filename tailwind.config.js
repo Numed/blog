@@ -5,22 +5,27 @@ module.exports = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "",
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
       colors: {
         primary: "#1A1A1A",
+        blogPurple: "#6941C6",
+        blogPink: "#C11574",
+        blogBlue: "#3538CD",
+        blogGreen: "#027A48",
+        blogGrey: "#667085",
+        lightBlogPurple: "#F9F5FF",
+        lightBlogPink: "#FDF2FA",
+        lightBlogBlue: "#EEF4FF",
+        lightBlogGreen: "#ECFDF3",
       },
       fontSize: {
         "10xl": "10rem",
       },
       textUnderlineOffset: {
-        6: '6px',
-      }
+        6: "6px",
+      },
     },
   },
   plugins: [],
