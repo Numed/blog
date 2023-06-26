@@ -1,6 +1,7 @@
 import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import CategoryButton from "@/src/ui/CategoryButton";
 
 import { mainBlogs } from "@/src/components/Constants";
 
@@ -24,12 +25,7 @@ const Blogs: FC = () => {
                 <div className="space-x-2">
                   {categories.map((el, i) => {
                     const color = setColor(el);
-                    const elementStyles = `text-blog${color} bg-lightBlog${color} rounded-2xl py-1 px-3`;
-                    return (
-                      <button className={elementStyles} key={i}>
-                        {el}
-                      </button>
-                    );
+                    return <CategoryButton key={i} color={color} text={el} />;
                   })}
                 </div>
               </div>

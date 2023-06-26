@@ -22,3 +22,27 @@ body {
 .cards{
   @apply mt-8 w-full grid grid-cols-1 md:grid-cols-2 gap-4
 }
+
+.orange{
+  @apply text-blogOrange bg-lightBlogOrange rounded-2xl py-1 px-3
+}
+
+.blue{
+  @apply text-blogBlue bg-lightBlogBlue rounded-2xl py-1 px-3
+}
+
+.pink{
+  @apply text-blogPink bg-lightBlogPink rounded-2xl py-1 px-3
+}
+
+.purple{
+  @apply text-blogPurple bg-lightBlogPurple rounded-2xl py-1 px-3
+}
+
+.dark-blue{
+  @apply text-blogDarkBlue bg-lightBlogDarkBlue rounded-2xl py-1 px-3
+}
+
+.green{
+  @apply text-blogGreen bg-lightBlogGreen rounded-2xl py-1 px-3
+}
