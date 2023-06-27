@@ -2,7 +2,7 @@
 
 const MainIntro = ({ title }: { title: string }) => {
   return (
-    <section className="border-t-2 border-b-2">
+    <section className="border-t-2 border-b-2 mx-12">
       <h2 className="my-4 text-4xl md:text-8xl font-bold uppercase lg:text-10xl text-center px-8">
         {title}
       </h2>

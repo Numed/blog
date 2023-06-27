@@ -2,25 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background-rgb: 255, 255, 255;
-  --foreground-color: #1a1a1a;
-}
-
-@media (prefers-color-scheme: dark) {
+ @media (prefers-color-scheme: dark) {
   :root {
-    --background-rgb: 9, 13, 31, 1;
+    --background: #090D1F;
     --foreground-color: #fff;
   }
 }
 
-body {
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #fff;
+    --foreground-color: #1a1a1a;
+  }
+} 
+
+[data-theme = "light"] body {
+  background-color: var(--background);
   color: var(--foreground-color);
-  background: rgb(var(--background-rgb));
+}
+
+[data-theme = "dark"] body {
+  background-color: var(--background);
+  color: var(--foreground-color);
+}
+
+.pagination-btn{
+  @apply p-3 text-blogGrey rounded-lg w-10 hover:bg-lightBlogPurple hover:opacity-80 dark:hover:bg-white dark:hover:text-primary dark:bg-primary dark:text-white
+}
+
+.pagination-btn__active{
+  @apply p-3 bg-lightBlogPurple text-blogGrey w-10 hover:opacity-80 rounded-lg dark:bg-white dark:text-primary
 }
 
 .cards{
   @apply mt-8 w-full grid grid-cols-1 md:grid-cols-2 gap-4
+}
+
+.toggle-input:checked ~ .toggle-circle{
+  @apply -translate-x-11
 }
 
 .orange{

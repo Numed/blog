@@ -9,7 +9,7 @@ import { setColor } from "@/src/helpers";
 
 const RecentBlogs: FC = () => {
   return (
-    <section className="py-7 flex justify-center flex-col px-12">
+    <section className="py-7 flex justify-center flex-col mx-12">
       <h4 className="font-semibold text-2xl">Recent blog posts</h4>
       <div className="cards">
         {recentBlogs.map(

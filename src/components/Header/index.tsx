@@ -1,17 +1,40 @@
-import { FC, useContext, useEffect, useRef } from "react";
+"use client";
+
+import { FC, useContext, useEffect, useRef, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
+import { HiOutlineSun } from "react-icons/hi";
+import { FiMoon } from "react-icons/fi";
+import { useTheme } from "next-themes";
 
 import { navLinks } from "../Constants";
 import { LinkContext } from "../Contexts";
 
-import { HiOutlineSun } from "react-icons/hi";
-import { FiMoon } from "react-icons/fi";
-
 const Header: FC = () => {
+  const [switched, setSwitched] = useState<boolean>(true);
+  // const [mounted, setMounted] = useState(false);
+  const [currentTheme, setCurrentTheme] = useState(
+    localStorage.getItem("theme")
+  );
+
   const { setActiveLink } = useContext(LinkContext);
   const router = useRouter();
   const pathname = usePathname();
   const links = useRef(Array(navLinks.length).fill(null));
+  const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    // setMounted(true);
+    const activePage = navLinks.filter((el) => el.href === pathname)[0];
+    setActiveLink(activePage.banner);
+    const activeLink = links.current.filter(
+      (el) => el.textContent === activePage.title
+    )[0];
+    activeLink.classList.add("underline", "underline-offset-6");
+  }, []);
+
+  // if (!mounted) {
+  //   return null;
+  // }
 
   const onClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -30,14 +53,10 @@ const Header: FC = () => {
     activeLink.classList.add("underline", "underline-offset-6");
   };
 
-  useEffect(() => {
-    const activePage = navLinks.filter((el) => el.href === pathname)[0];
-    setActiveLink(activePage.banner);
-    const activeLink = links.current.filter(
-      (el) => el.textContent === activePage.title
-    )[0];
-    activeLink.classList.add("underline", "underline-offset-6");
-  }, []);
+  const onChangeTheme = () => {
+    setSwitched(!switched),
+      theme === "dark" ? setTheme("light") : setTheme("dark");
+  };
 
   return (
     <header className="w-full py-12 px-16 flex justify-between">
@@ -54,18 +73,20 @@ const Header: FC = () => {
             </a>
           </li>
         ))}
-        <label className="flex items-center relative w-max cursor-pointer select-non">
+        <label className="flex items-center relative w-max cursor-pointer select-none -z-3">
           <input
             type="checkbox"
-            className="py-5 px-12 appearance-none transition-colors cursor-pointer w-14 h-7 rounded-full focus:outline-none bg-white dark:bg-white"
+            checked={switched}
+            onChange={() => onChangeTheme()}
+            className="toggle-input py-5 px-12 appearance-none transition-colors cursor-pointer w-14 h-7 rounded-full focus:outline-none bg-primary dark:bg-white"
           />
-          <span className="absolute font-medium text-xl left-4 text-primary">
-            <FiMoon />
-          </span>
-          <span className="absolute font-medium text-xl right-4 text-primary">
+          <span className="absolute font-medium text-xl left-4 text-white dark:text-primary">
             <HiOutlineSun />
           </span>
-          <span className="w-5 h-5 right-4 absolute rounded-full transform transition-transform bg-bodyBlue" />
+          <span className="absolute font-medium text-xl right-4 text-white dark:text-primary">
+            <FiMoon />
+          </span>
+          <span className="toggle-circle w-5 h-5 right-4 absolute rounded-full transform transition-transform  pointer-events-none bg-white dark:bg-bodyBlue" />
         </label>
       </ul>
     </header>

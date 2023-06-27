@@ -1,10 +1,9 @@
 import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
+
 import CategoryButton from "@/src/ui/CategoryButton";
-
 import { mainBlogs } from "@/src/components/Constants";
-
 import { setColor } from "@/src/helpers";
 
 const Blogs: FC = () => {
