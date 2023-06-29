@@ -1,7 +1,9 @@
 import { FC } from "react";
 
+import NewsletterContent from "@/src/components/NewsletterContent";
+
 const NewsLetter: FC = () => {
-  return <div>news letter 1</div>;
+  return <NewsletterContent />;
 };
 
 export default NewsLetter;
