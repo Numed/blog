@@ -12,9 +12,6 @@ import { LinkContext } from "../Contexts";
 const Header: FC = () => {
   const [switched, setSwitched] = useState<boolean>(true);
   // const [mounted, setMounted] = useState(false);
-  const [currentTheme, setCurrentTheme] = useState(
-    localStorage.getItem("theme")
-  );
 
   const { setActiveLink } = useContext(LinkContext);
   const router = useRouter();

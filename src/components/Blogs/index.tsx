@@ -13,14 +13,18 @@ const Blogs: FC = () => {
       <div className="mt-8 w-full grid grid-cols-2 md:grid-cols-3 gap-4">
         {mainBlogs.map(
           ({ id, img, date, description, author, categories, href, title }) => (
-            <Link key={id} href={href} className="grid gap-4 mb-8">
-              <Image src={img} alt={title} />
+            <div key={id} className="grid gap-4 mb-8">
+              <Image className="w-full h-full" src={img} alt={title} />
               <div>
                 <h5 className="text-blogPurple text-sm font-semibold mb-3">
                   {author} &bull; {date}
                 </h5>
-                <h3 className="text-2xl font-bold mb-3">{title}</h3>
-                <p className="text-base mb-6  text-blogGrey">{description}</p>
+                <Link href={href} className="text-2xl font-bold mb-3">
+                  {title}
+                </Link>
+                <p className="text-base mb-6 mt-4 text-blogGrey">
+                  {description}
+                </p>
                 <div className="space-x-2">
                   {categories.map((el, i) => {
                     const color = setColor(el);
@@ -28,7 +32,7 @@ const Blogs: FC = () => {
                   })}
                 </div>
               </div>
-            </Link>
+            </div>
           )
         )}
       </div>

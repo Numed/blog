@@ -9,6 +9,7 @@ export type NavlinkType = {
 
 export type RecentBlogsType = {
   id: number;
+  size?: string;
   img: string | StaticImageData;
   title: string;
   description: string;
@@ -16,4 +17,14 @@ export type RecentBlogsType = {
   categories: string[];
   author: string;
   date: string;
+};
+
+export type ProjectsType = {
+  id: number;
+  size?: string;
+  img: string | StaticImageData;
+  title: string;
+  description: string;
+  href: string;
+  categories: string[];
 };

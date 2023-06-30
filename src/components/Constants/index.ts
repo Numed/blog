@@ -1,4 +1,4 @@
-import { NavlinkType, RecentBlogsType } from "./types";
+import { NavlinkType, RecentBlogsType, ProjectsType } from "./types";
 
 import blogimg1 from "@/public/img/blogs/blog1.png";
 import blogimg2 from "@/public/img/blogs/blog2.png";
@@ -12,6 +12,12 @@ import blogImg2 from "@/public/img/recentBlogs/blog-2.png";
 import blogImg3 from "@/public/img/recentBlogs/blog-3.png";
 import blogImg4 from "@/public/img/recentBlogs/blog-4.png";
 
+import projectImg1 from "@/public/img/projects/project1.png";
+import projectImg2 from "@/public/img/projects/project2.png";
+import projectImg3 from "@/public/img/projects/project3.png";
+import projectImg4 from "@/public/img/projects/project4.png";
+import projectImg5 from "@/public/img/projects/project5.png";
+
 export const navLinks: NavlinkType[] = [
   { id: 0, title: "Blog", href: "/", banner: "The blog" },
   { id: 1, title: "Projects", href: "/projects", banner: "Projects" },
@@ -22,10 +28,11 @@ export const navLinks: NavlinkType[] = [
 export const recentBlogs: RecentBlogsType[] = [
   {
     id: 1,
+    size: "big",
     img: blogImg1,
     title: "UX review presentations",
     description:
-      "How do you create compelling presentations that wow your colleagues and impress your managers?",
+      "How do you create compelling presentations that wow your colleagues, engage your audience, and leave a lasting impression on your managers? By leveraging effective storytelling techniques, incorporating visually appealing graphics, and delivering a clear and concise message, you can captivate your audience and ensure that your presentations stand out from the rest. Whether it's crafting a compelling narrative, using impactful visuals, or honing your public speaking skills, the key lies in finding the perfect balance between content, design, and delivery",
     href: "/ux-review-presentation",
     categories: ["Design", "Research", "Presentation"],
     author: "Olivia Rhye",
@@ -55,6 +62,7 @@ export const recentBlogs: RecentBlogsType[] = [
   },
   {
     id: 4,
+    size: "big",
     img: blogImg4,
     title: "Grid system for better Design User Interface",
     description:
@@ -132,5 +140,56 @@ export const mainBlogs: RecentBlogsType[] = [
     categories: ["Podcast", "Customer Success"],
     author: "Orlando Diggs",
     date: "1 Jan 2023",
+  },
+];
+
+export const projectsBlogs: ProjectsType[] = [
+  {
+    id: 1,
+    img: projectImg1,
+    title: "User Experience Design Dashboard Hotel Management",
+    description:
+      "The context of user experience (UX) design, a hotel management dashboard should be designed with the needs and goals of the hotel staff in mind. This means creating a clear and intuitive interface that allows staff to easily access and use the various tools and features of the dashboard.",
+    href: "/user-experience-design",
+    categories: ["Design", "Research", "Presentation"],
+  },
+  {
+    id: 2,
+    img: projectImg2,
+    title:
+      "Bring of User Experience Design to Policy Making, How to Impact Society",
+    description:
+      "User experience (UX) design is a discipline that focuses on creating products and services that are easy to use, efficient, and enjoyable for users. In the context of policy making, UX design can be used to create policies that are effec",
+    href: "/bring-of-user",
+    categories: ["Design", "Presentation"],
+  },
+  {
+    id: 3,
+    size: "big",
+    img: projectImg3,
+    title:
+      "Bringing Design Process to Teams, How to Solve User Problems with Data & Inclusive Collaboration Designons",
+    description:
+      "There are many different design processes that can be followed when creating a hotel management dashboard. Here are some tips for bringing a design process to teams and using data and inclusive collaboration to solve user problems",
+    href: "/ux-review-presentation",
+    categories: ["Design", "Research", "Presentation", "Collaboration"],
+  },
+  {
+    id: 4,
+    img: projectImg4,
+    title: "Icon Package of Slin Icon",
+    description:
+      "An icon package is a collection of icons that can be used in various design projects, such as website design, app development, and graphic design.",
+    href: "/icon-package-of-slin-icon",
+    categories: ["Design", "Branding", "Identity"],
+  },
+  {
+    id: 5,
+    img: projectImg5,
+    title: "UX review presentations",
+    description:
+      "How do you create compelling presentations that wow your colleagues and impress your managers?",
+    href: "/ux-review-presentation",
+    categories: ["Design", "Research", "Presentation"],
   },
 ];
