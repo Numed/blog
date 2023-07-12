@@ -11,27 +11,11 @@ import { LinkContext } from "../Contexts";
 
 const Header: FC = () => {
   const [switched, setSwitched] = useState<boolean>(true);
-  // const [mounted, setMounted] = useState(false);
 
   const { setActiveLink } = useContext(LinkContext);
   const router = useRouter();
-  const pathname = usePathname();
   const links = useRef(Array(navLinks.length).fill(null));
   const { theme, setTheme } = useTheme();
-
-  useEffect(() => {
-    // setMounted(true);
-    const activePage = navLinks.filter((el) => el.href === pathname)[0];
-    setActiveLink(activePage.banner);
-    const activeLink = links.current.filter(
-      (el) => el.textContent === activePage.title
-    )[0];
-    activeLink.classList.add("underline", "underline-offset-6");
-  }, []);
-
-  // if (!mounted) {
-  //   return null;
-  // }
 
   const onClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
