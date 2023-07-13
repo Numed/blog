@@ -28,3 +28,12 @@ export type ProjectsType = {
   href: string;
   categories: string[];
 };
+
+export type BlogInfoType = {
+  id: number;
+  img: string | StaticImageData;
+  title?: string;
+  example?: string;
+  description: string;
+  suptitle?: string;
+};

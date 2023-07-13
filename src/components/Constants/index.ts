@@ -1,4 +1,4 @@
-import { NavlinkType, RecentBlogsType, ProjectsType } from "./types";
+import { NavlinkType, RecentBlogsType, ProjectsType, BlogInfoType } from "./types";
 
 import blogimg1 from "@/public/img/blogs/blog1.png";
 import blogimg2 from "@/public/img/blogs/blog2.png";
@@ -205,7 +205,7 @@ export const projectsBlogs: ProjectsType[] = [
   },
 ];
 
-export const blogInfoContent: any = [
+export const blogInfoContent: BlogInfoType[] = [
   {
     id: 1,
     img: bg1,
